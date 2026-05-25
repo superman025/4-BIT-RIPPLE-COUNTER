@@ -32,9 +32,28 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
  Developed by: RegisterNumber:
 */
+```
+module EXP12DE(clk, rst, count);
+input wire clk;
+input wire rst;
+output reg [3:0] count;
+
+always @(posedge clk or posedge rst)
+begin
+	if(rst)
+		count <= 4'b0000;
+	else
+		count <= count + 1;
+end
+endmodule
+
+```
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
+<img width="973" height="396" alt="{9BC75140-DF39-4ABD-88C3-C658CEF09632}" src="https://github.com/user-attachments/assets/e12781b1-4002-4e7c-8279-bfa9ae2d1439" />
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
+<img width="1028" height="472" alt="{020D074E-6133-4359-B92C-E66AB0E097A8}" src="https://github.com/user-attachments/assets/4afb4e65-bc32-473b-8b8b-df330f91866e" />
 
 **RESULTS**
+Thus, To implement 4 Bit Ripple Counter using verilog and validating their functionaly using their functional tables is executed succsessfully.
